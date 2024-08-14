@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <style>
+    #panorama {
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+    </style>
+</head>
+<body>
+
+<div id="panorama"></div>
+<script>
+pannellum.viewer('panorama', {   
+    "default": {
+        "firstScene": "circle",
+        "author": "Sinestesia.cc",
+        "sceneFadeDuration": 1000
+    },
+
+    "scenes": {
+        "circle": {
+            "title": "Cencosud Mall",
+            "hfov": 110,
+            "pitch": -3,
+            "yaw": 117,
+            "type": "equirectangular",
+            "panorama": "https://static.wixstatic.com/media/9d4060_47914ddcf9d341408de5122aebda4770~mv2.jpg/v1/fill/w_1535,h_768,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/01-4096%20(1)_edited.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -2.1,
+                    "yaw": 132.9,
+                    "type": "scene",
+                    "text": "Cencosud Mall 2",
+                    "sceneId": "house"
+                }
+            ]
+        },
+
+        "house": {
+            "title": "Cencosud Mall 2",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "https://static.wixstatic.com/media/9d4060_78a99514582b406fbf14d32326e9c2ea~mv2.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": 37.1,
+                    "type": "scene",
+                    "text": "Volver foto 1",
+                    "sceneId": "circle",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }
+            ]
+        }
+    }
+});
+</script>
+
+</body>
+</html>

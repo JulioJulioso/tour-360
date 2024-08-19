@@ -1,92 +1,120 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tour</title>
+    <title>Tour 360</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
     <style>
-    #panorama {
-        width: 100%;
-        height: 100vh;
-        margin: 0;
-        padding: 0;
-    }
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000; /* Fondo negro para asegurar contraste */
+        }
+        #panorama {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        /* Contenedor del texto del autor */
+        .author-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Barra negra translúcida */
+            color: white;
+            text-align: center;
+            font-size: 15px;
+            padding: 5px 0;
+            z-index: 1000;
+        }
+        /* Asegura que la barra del autor se mantenga visible en fullscreen */
+        .pnlm-fullscreen .author-container {
+            position: absolute;
+            z-index: 1001; /* Más alto que el z-index del visor */
+        }
     </style>
 </head>
 <body>
 
 <div id="panorama"></div>
+
+<!-- Texto del autor -->
+<div class="author-container">Desarrollado por Sinestesia.cc</div>
+
 <script>
-pannellum.viewer('panorama', {   
-    "default": {
-        "firstScene": "circle",
-        "author": "Sinestesia.cc",
-        "sceneFadeDuration": 1000,
-        "autoLoad": true, // Carga automática de la escena
-        "orientationOnByDefault": true, // Activa el giroscopio por defecto
-        "showControls": true,
-    },
-
-    "scenes": {
-        "circle": {
-            "title": "Cencosud Mall",
-            "hfov": 110,
-            "pitch": -3,
-            "yaw": 117,
-            "type": "equirectangular",
-            "panorama": "https://static.wixstatic.com/media/9d4060_47914ddcf9d341408de5122aebda4770~mv2.jpg/v1/fill/w_1535,h_768,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/01-4096%20(1)_edited.jpg",
-            "hotSpots": [
-                {
-                    "pitch": -2.1,
-                    "yaw": 132.9,
-                    "type": "scene",
-                    "text": "Cencosud Mall 2",
-                    "sceneId": "house"
-                }
-            ]
+    pannellum.viewer('panorama', {
+        "default": {
+            "firstScene": "circle",
+            "sceneFadeDuration": 1000,
+            "autoLoad": true,
+            "gyro": true,
+            "orientationOnByDefault": true, /* Activar el giroscopio por defecto */
+            "showFullscreenCtrl": true /* Mostrar el botón de fullscreen */
         },
-
-        "house": {
-            "title": "Cencosud Mall 2",
-            "hfov": 110,
-            "yaw": 5,
-            "type": "equirectangular",
-            "panorama": "https://static.wixstatic.com/media/9d4060_78a99514582b406fbf14d32326e9c2ea~mv2.jpg",
-            "hotSpots": [
-                {
-                    "pitch": -0.6,
-                    "yaw": 37.1,
-                    "type": "scene",
-                    "text": "Volver foto 1",
-                    "sceneId": "foto3",
-                    "targetYaw": -23,
-                    "targetPitch": 2
-                }
-            ]
-        },
-
-        "foto3": {
-            "title": "Cencosud Mall 3",
-            "hfov": 110,
-            "yaw": 5,
-            "type": "equirectangular",
-            "panorama": "https://static.wixstatic.com/media/9d4060_5ab385c48c374a13a52ca1161d4178fc~mv2.png",
-            "hotSpots": [
-                {
-                    "pitch": -15.6,
-                    "yaw": 97.1,
-                    "type": "scene",
-                    "text": "Volver foto 1",
-                    "sceneId": "circle",
-                    "targetYaw": -23,
-                    "targetPitch": 2
-                }
-            ]
+        "scenes": {
+            "circle": {
+                "title": "",
+                "hfov": 110,
+                "pitch": -3,
+                "yaw": 117,
+                "type": "equirectangular",
+                "panorama": "https://static.wixstatic.com/media/9d4060_47914ddcf9d341408de5122aebda4770~mv2.jpg/v1/fill/w_1535,h_768,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/01-4096%20(1)_edited.jpg",
+                "hotSpots": [
+                    {
+                        "pitch": -2.1,
+                        "yaw": 132.9,
+                        "type": "scene",
+                        "text": "Cencosud Mall 2",
+                        "sceneId": "house"
+                    }
+                ]
+            },
+            "house": {
+                "title": "Cencosud Mall 2",
+                "hfov": 110,
+                "yaw": 5,
+                "type": "equirectangular",
+                "panorama": "https://static.wixstatic.com/media/9d4060_78a99514582b406fbf14d32326e9c2ea~mv2.jpg",
+                "hotSpots": [
+                    {
+                        "pitch": -0.6,
+                        "yaw": 37.1,
+                        "type": "scene",
+                        "text": "Volver foto 1",
+                        "sceneId": "foto3",
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    }
+                ]
+            },
+            "foto3": {
+                "title": "Cencosud Mall 3",
+                "hfov": 110,
+                "yaw": 5,
+                "type": "equirectangular",
+                "panorama": "https://static.wixstatic.com/media/9d4060_5ab385c48c374a13a52ca1161d4178fc~mv2.png",
+                "hotSpots": [
+                    {
+                        "pitch": -15.6,
+                        "yaw": 97.1,
+                        "type": "scene",
+                        "text": "Volver foto 1",
+                        "sceneId": "circle",
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    }
+                ]
+            }
         }
-    }
-});
+    });
 </script>
 
 </body>

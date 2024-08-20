@@ -40,6 +40,16 @@
             position: absolute;
             z-index: 1001; /* Más alto que el z-index del visor */
         }
+        /* Estilo personalizado para los hotspots */
+        .custom-hotspot-icon {
+            background-image: url('https://static.wixstatic.com/media/36438d_e7fe9d39fc81453c86465734945f41fc~mv2.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 40px;
+            height: 40px;
+            border: none; /* Elimina cualquier borde por defecto */
+            cursor: pointer; /* Cambia el cursor cuando se pasa por encima */
+        }
     </style>
 </head>
 <body>
@@ -78,7 +88,8 @@
                         "yaw": 132.9,
                         "type": "scene",
                         "text": "Cencosud Mall 2",
-                        "sceneId": "house"
+                        "sceneId": "house",
+                        "cssClass": "custom-hotspot-icon" // Aplica el estilo personalizado
                     }
                 ]
             },
@@ -96,7 +107,8 @@
                         "text": "Volver foto 1",
                         "sceneId": "foto3",
                         "targetYaw": -23,
-                        "targetPitch": 2
+                        "targetPitch": 2,
+                        "cssClass": "custom-hotspot-icon" // Aplica el estilo personalizado
                     }
                 ]
             },
@@ -114,7 +126,8 @@
                         "text": "Volver foto 1",
                         "sceneId": "circle",
                         "targetYaw": -23,
-                        "targetPitch": 2
+                        "targetPitch": 2,
+                        "cssClass": "custom-hotspot-icon" // Aplica el estilo personalizado
                     }
                 ]
             }

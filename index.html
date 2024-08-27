@@ -47,9 +47,9 @@
             position: absolute;
             z-index: 1001;
         }
-        /* Estilo personalizado para los hotspots */
-        .custom-hotspot-icon {
-            background-image: url('https://static.wixstatic.com/media/9d4060_985cb2eea2484daea5adef66e97e57f8~mv2.png');
+        /* Estilos personalizados para cada hotspot */
+        .hotspot-icon-1 {
+            background-image: url('https://static.wixstatic.com/media/9d4060_e30bda0acb1c4d72a226c10701bf1031~mv2.png'); /* Cambia esto a la URL de tu icono personalizado */
             background-size: contain;
             background-repeat: no-repeat;
             width: 40px;
@@ -57,7 +57,50 @@
             border: none;
             cursor: pointer;
             user-select: none;
-            pointer-events: auto; /* Permite que los hotspots sigan siendo interactivos */
+        }
+
+        .hotspot-icon-2 {
+            background-image: url('https://static.wixstatic.com/media/9d4060_b2a31095af214b91af43005bb349ec21~mv2.png'); /* Cambia esto a la URL de tu icono personalizado */
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 40px;
+            height: 40px;
+            border: none;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .hotspot-icon-3 {
+            background-image: url('https://static.wixstatic.com/media/9d4060_421cb106c8c44636abed595b8bd6015e~mv2.png'); /* Cambia esto a la URL de tu icono personalizado */
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 40px;
+            height: 40px;
+            border: none;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .hotspot-icon-4 {
+            background-image: url('https://static.wixstatic.com/media/9d4060_c37e9f7c35594865a494d2dfa4e236bf~mv2.png'); /* Cambia esto a la URL de tu icono personalizado */
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 40px;
+            height: 40px;
+            border: none;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .hotspot-icon-5 {
+            background-image: url('https://static.wixstatic.com/media/9d4060_84b6cc43c4fb4636ab62d9c881a27849~mv2.png'); /* Cambia esto a la URL de tu icono personalizado */
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 40px;
+            height: 40px;
+            border: none;
+            cursor: pointer;
+            user-select: none;
         }
     </style>
 </head>
@@ -81,7 +124,7 @@
             "keyboardZoom": false,             // Desactiva el zoom con el teclado
             "disableKeyboardCtrl": true,       // Desactiva todos los controles del teclado
             "disableTouch": true,              // Desactiva el control táctil
-            "draggable": false                 // Desactiva el arrastre con el ratón
+            "draggable": true                 // Activa el arrastre con el ratón
         },
         "scenes": {
             "circle": {
@@ -98,9 +141,8 @@
                         "type": "scene",
                         "text": "2",
                         "sceneId": "house",
-                        "cssClass": "custom-hotspot-icon"
-                    },
-                    
+                        "cssClass": "hotspot-icon-2"
+                    }
                 ]
             },
             "house": {
@@ -118,7 +160,7 @@
                         "sceneId": "foto3",
                         "targetYaw": -23,
                         "targetPitch": 5,
-                        "cssClass": "custom-hotspot-icon"
+                        "cssClass": "hotspot-icon-3"
                     },
                     {
                         "pitch": -2.6,
@@ -128,7 +170,7 @@
                         "sceneId": "circle",
                         "targetYaw": -23,
                         "targetPitch": 2,
-                        "cssClass": "custom-hotspot-icon"
+                        "cssClass": "hotspot-icon-1"
                     }
                 ]
             },
@@ -147,7 +189,7 @@
                         "sceneId": "house",
                         "targetYaw": -23,
                         "targetPitch": 2,
-                        "cssClass": "custom-hotspot-icon"
+                        "cssClass": "hotspot-icon-2"
                     },
                     {
                         "pitch": 2,
@@ -155,7 +197,7 @@
                         "type": "scene",
                         "text": "4",
                         "sceneId": "foto4",
-                        "cssClass": "custom-hotspot-icon"
+                        "cssClass": "hotspot-icon-4"
                     }
                 ]
             },
@@ -174,7 +216,7 @@
                         "sceneId": "foto3",
                         "targetYaw": -23,
                         "targetPitch": 2,
-                        "cssClass": "custom-hotspot-icon"
+                        "cssClass": "hotspot-icon-3"
                     },
                     {
                         "pitch": 0,
@@ -182,7 +224,7 @@
                         "type": "scene",
                         "text": "5",
                         "sceneId": "foto5",
-                        "cssClass": "custom-hotspot-icon"
+                        "cssClass": "hotspot-icon-5"
                     }
                 ]
             },
@@ -195,19 +237,26 @@
                 "hotSpots": [
                     {
                         "pitch": 2,
-                        "yaw": 50,
+                        "yaw": 45,
+                        "type": "scene",
+                        "text": "4",
+                        "sceneId": "foto4",
+                        "targetYaw": -23,
+                        "targetPitch": 2,
+                        "cssClass": "hotspot-icon-4"
+                    },
+                    {
+                        "pitch": 3,
+                        "yaw": 217,
                         "type": "scene",
                         "text": "1",
                         "sceneId": "circle",
-                        "targetYaw": -23,
-                        "targetPitch": 2,
-                        "cssClass": "custom-hotspot-icon"
-                    },
-                                 ]
+                        "cssClass": "hotspot-icon-1"
+                    }
+                ]
             }
         }
     });
 </script>
-
 </body>
 </html>
